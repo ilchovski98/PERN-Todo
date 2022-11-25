@@ -25,7 +25,7 @@ app.post('/todos', async (req, res) => {
 // get todos
 app.get('/todos', async (req, res) => {
   try {
-    const getTodo = await pool.query('SELECT * FROM todo');
+    const getTodo = await pool.query('SELECT * FROM todo GROUP BY todo_id');
     res.json(getTodo.rows);
   } catch (error) {
     console.error(error.messsage);

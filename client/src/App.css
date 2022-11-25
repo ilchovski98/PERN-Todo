@@ -51,7 +51,7 @@
   flex: 1;
 }
 
-.btn {
+/* .btn {
   padding: 8px 10px;
   border-radius: 5px;
   color: #fff;
@@ -64,7 +64,7 @@
 
 .btn:hover {
   opacity: 0.75;
-}
+} */
 
 .btn--warning {
   background: orange;

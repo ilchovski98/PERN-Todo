@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import EditTodo from './EditTodo';
 
 const ListTodo = () => {
   const [data, setData] = useState([]);
@@ -53,7 +54,7 @@ const ListTodo = () => {
               <th>{el.description}</th>
 
               <th>
-                <button className="btn btn--warning">Edit</button>
+                <EditTodo todo={el} />
               </th>
 
               <th>
