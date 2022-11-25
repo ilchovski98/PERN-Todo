@@ -1,8 +1,9 @@
+require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const app = express();
 const pool = require('./db');
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middlewares
 app.use(cors());
@@ -64,10 +65,6 @@ app.delete('/todos/:id', async (req, res) => {
     console.error(error);
   }
 });
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// });
 
 app.listen(PORT, () => {
   console.log(`Backend is running on ${PORT}...`);

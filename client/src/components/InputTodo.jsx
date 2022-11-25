@@ -7,12 +7,11 @@ const InputTodo = () => {
   const onSubmitForm = async e => {
     try {
       const body = { description };
-      const response = await fetch('http://localhost:3000/todos', {
+      await fetch(`${process.env.REACT_APP_BASE_URL}/todos`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(body)
       });
-      console.log('response', response);
     } catch (error) {
       console.error(error.message);
     }

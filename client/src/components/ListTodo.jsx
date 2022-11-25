@@ -6,7 +6,7 @@ const ListTodo = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch('http://localhost:3000/todos');
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/todos`);
       const responseJson = await response.json();
       if (responseJson) {
         setData(responseJson);
@@ -18,12 +18,12 @@ const ListTodo = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/todos/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/todos/${id}`, {
         method: 'DELETE'
       });
       const responseJson = await response.json();
 
-      if (responseJson.rowCount == 1) {
+      if (responseJson.rowCount === 1) {
         setData(data.filter(el => el.todo_id !== id));
       }
     } catch (error) {
@@ -34,8 +34,6 @@ const ListTodo = () => {
   useEffect(() => {
     getTodos();
   }, []);
-
-  console.log('data', data);
 
   return (
     <>
