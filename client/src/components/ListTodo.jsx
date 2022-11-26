@@ -6,7 +6,7 @@ const ListTodo = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/todos`);
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/todos`);
       const responseJson = await response.json();
       if (responseJson) {
         setData(responseJson);
@@ -18,7 +18,7 @@ const ListTodo = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/todos/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/todos/${id}`, {
         method: 'DELETE'
       });
       const responseJson = await response.json();

@@ -7,7 +7,7 @@ const EditTodo = ({todo}) => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/todos/${todo.todo_id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/todos/${todo.todo_id}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(body)

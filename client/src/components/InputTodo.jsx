@@ -7,7 +7,7 @@ const InputTodo = () => {
   const onSubmitForm = async e => {
     try {
       const body = { description };
-      await fetch(`${process.env.REACT_APP_BASE_URL}/todos`, {
+      await fetch(`${process.env.REACT_APP_BASE_URL}/api/todos`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(body)
