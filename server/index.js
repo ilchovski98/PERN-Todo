@@ -19,7 +19,7 @@ app.post('/api/todos', async (req, res) => {
     const newTodo = await pool.query('INSERT INTO todo (description) VALUES($1)', [description]);
     res.json(newTodo.rowCount);
   } catch (error) {
-    console.error(error.message);
+    console.error(error);
   }
 });
 
